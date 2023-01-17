@@ -1,4 +1,6 @@
-
+alias ls='ls --color'
+alias ll='ls -l'
+alias dc='docker-compose'
 ssh-remove-bad-hosts() {
 	if [ "" == "$1" ]; then
 		echo "Usage: ssh-remove-bad-hosts <pattern>";
@@ -11,6 +13,10 @@ ssh-remove-bad-hosts() {
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=0
     source $HOME/.bash-git-prompt/gitprompt.sh
+fi
+
+if [ -f "$HOME/.git-completion.bash" ]; then
+	source $HOME/.git-completion.bash
 fi
 
 export PS1="[\u@\h:\l \W]\\$ "
