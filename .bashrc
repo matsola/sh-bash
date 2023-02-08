@@ -1,6 +1,11 @@
 alias ls='ls --color'
 alias ll='ls -l'
 alias dc='docker-compose'
+alias mkdir='mkdir -pv'
+
+alias mvn-dep-tree='mvn dependency:tree -DoutputFile=dep-tree'
+alias mvn-skip-things='mvn -DskipTests -Dmaven.javadoc.skip -Dlicense.skipDownloadLicenses -Dlicense.skipCheckLicense'
+
 ssh-remove-bad-hosts() {
 	if [ "" == "$1" ]; then
 		echo "Usage: ssh-remove-bad-hosts <pattern>";
