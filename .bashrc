@@ -29,6 +29,8 @@ export PS1="[\u@\h:\l \W]\\$ "
 export HISTSIZE=100000
 export HISTFILESIZE=
 
+umask 0002
+
 if [ -f "$HOME/.bash_local" ]; then
     source $HOME/.bash_local
 fi
