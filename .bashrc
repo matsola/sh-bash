@@ -4,7 +4,7 @@ alias dc='docker-compose'
 alias mkdir='mkdir -pv'
 
 alias mvn-dep-tree='mvn dependency:tree -DoutputFile=dep-tree'
-alias mvn-skip-things='mvn -DskipTests -Dmaven.javadoc.skip -Dlicense.skipDownloadLicenses -Dlicense.skipCheckLicense'
+alias mvn-skip-things='mvn -DskipTests -Dmaven.javadoc.skip -Dlicense.skipDownloadLicenses -Dlicense.skipCheckLicense -Drpm.disabled=true'
 
 ssh-remove-bad-hosts() {
 	if [ "" == "$1" ]; then
