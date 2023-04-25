@@ -7,6 +7,9 @@ alias mvn-dep-tree='mvn dependency:tree -DoutputFile=dep-tree'
 alias mvn-skip-things='mvn -DskipTests -Dmaven.javadoc.skip -Dlicense.skipDownloadLicenses -Dlicense.skipCheckLicense -Drpm.disabled=true'
 
 alias biggest='du -hsx * | sort -rh | head -10'
+alias mvn-skip-things='mvn -DskipTests -Dmaven.javadoc.skip -Dlicense.skipDownloadLicenses -Dlicense.skipCheckLicense'
+alias unzip-ls='unzip -l '
+alias unzip-cat='unzip -p '
 
 ssh-remove-bad-hosts() {
 	if [ "" == "$1" ]; then
