@@ -35,6 +35,7 @@ export HISTSIZE=100000
 export HISTFILESIZE=
 
 umask 0002
+ulimit -c unlimited
 
 if [ -f "$HOME/.bash_local" ]; then
     source $HOME/.bash_local
