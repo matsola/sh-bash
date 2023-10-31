@@ -11,6 +11,22 @@ alias mvn-skip-things='mvn -DskipTests -Dmaven.javadoc.skip -Dlicense.skipDownlo
 alias unzip-ls='unzip -l '
 alias unzip-cat='unzip -p '
 
+mvn-echo() {
+	if [ "" == "$1" ]; then
+		echo "Usage: mvn-echo <properties>+ [flags to maven]";
+		return;
+	fi
+
+	EXPRESSION=""
+	
+	while [ "${1:0:1}" != "-" ];  do
+		EXPRESSION="${EXPRESSION}$1: \${$1}\n"
+		shift
+	done
+
+	mvn -Dexec.executable="printf" -Dexec.args="'$EXPRESSION'" exec:exec -q  $*
+}
+
 ssh-remove-bad-hosts() {
 	if [ "" == "$1" ]; then
 		echo "Usage: ssh-remove-bad-hosts <pattern>";
