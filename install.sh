@@ -11,9 +11,13 @@ mkbackupandlink () {
     ln -s $sh_bash_dir/$file $HOME/$file
 }
 
+pushd $sh_bash_dir
+
 git submodule update --init --recursive
 
 mkbackupandlink ".bashrc"
 mkbackupandlink ".bash_profile"
 mkbackupandlink ".git-completion.bash"
 mkbackupandlink ".bash-git-prompt"
+
+popd
