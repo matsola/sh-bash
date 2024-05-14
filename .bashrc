@@ -3,7 +3,8 @@ alias ll='ls -l'
 alias dc='docker-compose'
 alias mkdir='mkdir -pv'
 
-alias mvn-dep-tree='mvn dependency:tree -DoutputFile=dep-tree'
+alias mvn-dep-tree='mvn dependency:3.6.1:tree -DoutputFile=dep-tree'
+alias mvn-dep-tree-verbose='mvn dependency:3.6.1:tree -DoutputFile=dep-tree-verbose -Dverbose=true'
 alias mvn-skip-things='mvn -DskipTests -Dmaven.javadoc.skip -Dlicense.skipDownloadLicenses -Dlicense.skipCheckLicense -Drpm.disabled=true'
 
 alias biggest='du -hsx * | sort -rh | head -10'
